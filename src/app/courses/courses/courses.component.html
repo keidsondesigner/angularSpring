@@ -5,7 +5,7 @@
 </ng-template>
 <mat-card>
   <mat-toolbar class="mat-elevation-z10">
-    <span>My app</span>
+    <span>Lista de Cursos</span>
   </mat-toolbar>
   <div *ngIf="courses$ | async as courses; else loading">
     <table mat-table [dataSource]="courses" class="mat-elevation-z8">
@@ -13,13 +13,13 @@
       <!-- Name Column -->
       <ng-container matColumnDef="name">
         <th mat-header-cell *matHeaderCellDef> Curso </th>
-        <td mat-cell *matCellDef="let course"> {{ course.name }} </td>
+        <td mat-cell *matCellDef="let course"> {{ course.curso }} </td>
       </ng-container>
 
     <!-- Category Column -->
     <ng-container matColumnDef="category">
       <th mat-header-cell *matHeaderCellDef> Categoria </th>
-      <td mat-cell *matCellDef="let course"> {{ course.category }} </td>
+      <td mat-cell *matCellDef="let course"> {{ course.categoria }} </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

@@ -1,25 +1,25 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
+import { environment } from 'src/environments/environment';
 import { Course } from '../courses/model/course';
 import { Observable } from 'rxjs';
 import { delay, take, tap } from 'rxjs/operators';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class CoursesService {
-
-  private readonly API = '/assets/courses.json';
+  protected baseUrl = environment.host;
 
   constructor( private http: HttpClient ) { }
 
-  listAll(): Observable<Course[]> {
-    return this.http.get<Course[]>(this.API)
+  getAllCourses(): Observable<Course[]> {
+    return this.http.get<Course[]>(`${this.baseUrl}/cursos`)
     .pipe(
       take(1),
       delay(3000),
-      tap(resposta => console.log(resposta))
+      tap(getInfo => console.log('getInfo', getInfo))
     );
   }
 }

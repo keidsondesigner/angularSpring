@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  host: 'https://expressjs-prisma-production-e9fe.up.railway.app'
 };
 
 /*
