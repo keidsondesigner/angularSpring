@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  host: 'https://expressjs-prisma-production-e9fe.up.railway.app'
+  host: 'https://api-render-nq0z.onrender.com'
 };
 
 /*

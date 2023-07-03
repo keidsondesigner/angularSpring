@@ -18,8 +18,7 @@ export class CoursesService {
     return this.http.get<Course[]>(`${this.baseUrl}/cursos`)
     .pipe(
       take(1),
-      delay(3000),
-      tap(getInfo => console.log('getInfo', getInfo))
+      tap(retorno => console.log('retonor getAllCourses()', retorno))
     );
   }
 }
